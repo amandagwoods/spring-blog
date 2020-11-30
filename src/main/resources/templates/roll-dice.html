@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="partials/partials :: head"></head>
+<head th:replace="partials/head :: head('Roll The Dice')"></head>
 
 <body>
 <header th:replace="partials/partials :: header"></header>
@@ -40,7 +40,10 @@
         </form>
 </center>
 
-    <footer th:replace="partials/partials :: footer"></footer>
+
+    <th:block th:include="partials/scripts :: scripts"></th:block>
+
+    <footer th:include="partials/footer :: footer"></footer>
     </div>
 </body>
 </html>

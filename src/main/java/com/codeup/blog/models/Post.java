@@ -1,4 +1,6 @@
-package com.codeup.blog;
+package com.codeup.blog.models;
+
+import com.codeup.blog.Category;
 
 import java.util.List;
 
