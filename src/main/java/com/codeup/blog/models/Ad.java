@@ -1,4 +1,5 @@
 package com.codeup.blog.models;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +18,14 @@ public class Ad {
 
     public Ad() {}
 
-    public Ad(long id, String title, String description){
+    //create
+    public Ad(String title, String description){
+        this.title = title;
+        this.description = description;
+    }
+
+    //read
+    public Ad(long id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
