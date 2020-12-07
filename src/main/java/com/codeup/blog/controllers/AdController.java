@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -45,12 +46,13 @@ public class AdController {
 
     @GetMapping("/ads/create")
     @ResponseBody
-    public String createAd(){
-        Ad ad = new Ad("title", "ps5");
+    public String createAd(
+            @RequestParam(name = "title") String title,
+            @RequestParam(name = "description") String desc
+       ){
+        Ad ad = new Ad(title, desc);
         Ad dbAd = adDao.save(ad);
         return "create a new Ad with the id: " +dbAd.getId();
-
-
     }
 
 
