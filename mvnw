@@ -130,7 +130,7 @@ if [ -z "$JAVA_HOME" ]; then
     readLink=$(which readlink)
     if [ ! $(expr "$readLink" : '\([^ ]*\)') = "no" ]; then
       if $darwin; then
-        javaHome="$(dirname \"$javaExecutable\")"
+        javaHome="$(dirname \"$javaExe`expr "$readLink" : '\([^ ]*\)'`utable\")"
         javaExecutable="$(cd \"$javaHome\" && pwd -P)/javac"
       else
         javaExecutable="$(readlink -f \"$javaExecutable\")"
